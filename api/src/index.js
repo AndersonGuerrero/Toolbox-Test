@@ -2,9 +2,10 @@
 const express = require('express')
 const bodyparser = require('body-parser')
 const cors = require('cors')
+const config = require('../config')
 
 // Define const
-const PORT = process.env.PORT || 3500
+const PORT = config.port
 const app = express()
 
 
@@ -21,3 +22,5 @@ app.get('*', function (req, res) {
 app.listen(PORT, () => {
     console.log(`Api listening at http://localhost:${PORT}/`)
 })
+
+module.exports = app;
