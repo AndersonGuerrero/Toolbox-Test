@@ -1,4 +1,4 @@
-import { HeaderContainer } from "./HeaderContainer";
-import { HomeContainer } from "./HomeContainer";
+import { HeaderContainer } from './HeaderContainer'
+import { HomeContainer } from './HomeContainer'
 
-export { HeaderContainer, HomeContainer };
+export { HeaderContainer, HomeContainer }

@@ -1,5 +1,5 @@
-import React from "react";
-import { LinkHeader } from "./LinkHeader";
+import React from 'react'
+import { LinkHeader } from './LinkHeader'
 
 export const Header = ({ onSelectMenu }) => {
   return (
@@ -26,22 +26,22 @@ export const Header = ({ onSelectMenu }) => {
           <ul className="navbar-nav ml-auto">
             <LinkHeader
               onSelectMenu={onSelectMenu}
-              text={"Portfolio"}
-              link={"portafolio"}
+              text={'Portfolio'}
+              link={'portafolio'}
             />
             <LinkHeader
               onSelectMenu={onSelectMenu}
-              text={"Acerca de"}
-              link={"acerca"}
+              text={'Acerca de'}
+              link={'acerca'}
             />
             <LinkHeader
               onSelectMenu={onSelectMenu}
-              text={"Contacto"}
-              link={"contacto"}
+              text={'Contacto'}
+              link={'contacto'}
             />
           </ul>
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}

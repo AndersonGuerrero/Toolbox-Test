@@ -1,2 +1,2 @@
-import { urlApi } from "../constants/urlApi";
-export const getUrlServerText = option => `${urlApi}${option}`;
+import { urlApi } from '../constants/urlApi'
+export const getUrlServerText = option => `${urlApi}${option}`

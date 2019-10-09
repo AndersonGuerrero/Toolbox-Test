@@ -1,4 +1,4 @@
 module.exports = {
   env: 'production',
-  port: process.env.PORT || 3500,
-};
+  port: process.env.PORT || 3500
+}
