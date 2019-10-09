@@ -26,7 +26,6 @@ describe('async actions', () => {
     const store = mockStore({ text: 'React Redux' })
 
     return store.dispatch(fetchTextFromServer()).then(() => {
-      // return of async actions
       expect(store.getActions()).toEqual(expectedActions)
     })
   })
