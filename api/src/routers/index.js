@@ -4,21 +4,15 @@ const express = require('express')
 // Define consts
 const router = express.Router()
 
-router.get('/portafolio', function(req, res) {
+router.get('/', function(req, res) {
   res.json({
-    text: 'OmegaSoft C.A, MasPublicidad, Centria S.A'
+    text: 'Api is working'
   })
 })
 
-router.get('/acerca', function(req, res) {
+router.post('/', function(req, res) {
   res.json({
-    text: 'Desarrollador Full-Stack'
-  })
-})
-
-router.get('/contacto', function(req, res) {
-  res.json({
-    text: 'aguerrero@gmail.com'
+    text: req.body.text
   })
 })
 
