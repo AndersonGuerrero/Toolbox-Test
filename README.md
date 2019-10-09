@@ -21,3 +21,5 @@ cd frontend && npm start
 cd api && npm run test
 
 # Test Frontend
+
+cd frontend && npm test
