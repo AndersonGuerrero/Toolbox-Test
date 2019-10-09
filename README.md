@@ -18,4 +18,6 @@ cd frontend && npm start
 
 # Test Api
 
+cd api && npm run test
+
 # Test Frontend
