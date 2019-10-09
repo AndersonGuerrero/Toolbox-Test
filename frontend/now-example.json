@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "frontend-test",
+  "alias": ["frontend-test"],
+  "build": {
+    "env": {
+     	"REACT_APP_API_URL": "https://api-test.aguerrerodev.now.sh/api/"
+    }
+  }
+}

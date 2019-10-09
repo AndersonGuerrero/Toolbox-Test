@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "cp src/index.js dist/",
+    "start": "node src/index.js",
     "dev": "nodemon src"
   },
   "author": "Anderson Guerrero",
