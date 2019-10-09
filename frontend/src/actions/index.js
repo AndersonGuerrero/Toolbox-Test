@@ -1,33 +1,27 @@
-import { getUrlServerText } from './../helpers/getUrlServerText'
+import { getUrlServer } from './../helpers/getUrlServer'
 
-export const SET_TEXT_DISPLAY = 'SET_TEXT_DISPLAY'
-export const GET_TEXT_DISPLAY_PENDING = 'GET_TEXT_DISPLAY_PENDING'
+export const FETCH_TEXT_SUCCESS = 'FETCH_TEXT_SUCCESS'
+export const FETCH_TEXT_REQUEST = 'FETCH_TEXT_REQUEST'
 
-const setTextDisplayPending = payload => ({
-  type: GET_TEXT_DISPLAY_PENDING,
+const fetchTextRequest = payload => ({
+  type: FETCH_TEXT_REQUEST,
   payload
 })
-const setTextDisplay = payload => ({ type: SET_TEXT_DISPLAY, payload })
+const fetchTextSuccess = payload => ({ type: FETCH_TEXT_SUCCESS, payload })
 
-export const getTextFromServer = payload => {
+export const fetchTextFromServer = payload => {
   return (dispatch, getState) => {
-    dispatch(setTextDisplayPending())
+    dispatch(fetchTextRequest())
     const data = { text: payload }
-    return fetch(getUrlServerText(payload), {
+    return fetch(getUrlServer(), {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
         'Content-Type': 'application/json'
       }
     })
-      .then(dataResponse => {
-        return dataResponse.json()
-      })
-      .then(server_data => {
-        dispatch(setTextDisplay(server_data.text))
-      })
-      .catch(error => {
-        dispatch(setTextDisplay('Servidor no disponible'))
-      })
+      .then(res => res.json())
+      .then(body => dispatch(fetchTextSuccess(body.text)))
+      .catch(error => dispatch(fetchTextSuccess('Servidor no disponible')))
   }
 }

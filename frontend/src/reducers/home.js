@@ -1,4 +1,4 @@
-import { SET_TEXT_DISPLAY, GET_TEXT_DISPLAY_PENDING } from './../actions'
+import { FETCH_TEXT_SUCCESS, FETCH_TEXT_REQUEST } from './../actions'
 
 const initialState = {
   textdisplay: 'React and Bootstrap',
@@ -7,10 +7,10 @@ const initialState = {
 
 export const home = (state = initialState, action) => {
   switch (action.type) {
-    case GET_TEXT_DISPLAY_PENDING: {
+    case FETCH_TEXT_REQUEST: {
       return { ...state, textPending: true }
     }
-    case SET_TEXT_DISPLAY: {
+    case FETCH_TEXT_SUCCESS: {
       return { ...state, textdisplay: action.payload, textPending: false }
     }
     default:
