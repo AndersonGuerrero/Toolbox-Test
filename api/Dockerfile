@@ -1,15 +1,17 @@
 FROM node:8
 
 # Create app directory
-WORKDIR /usr/src/app
+RUN mkdir -p /usr/src/app/api 
+WORKDIR /usr/src/app/api
 
 # Install app dependencies
-COPY package*.json ./
+COPY package.json /usr/src/app/api
+COPY package-lock.json /usr/src/app/api
 
 RUN npm install
 
 # Bundle app source
-COPY . .
+COPY . /usr/src/app/api
 
 EXPOSE 3500
 CMD [ "node", "src/index.js" ]
